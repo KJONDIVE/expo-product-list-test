@@ -1,12 +1,16 @@
+// *** IMPORT ***
 import { registerRootComponent } from "expo";
-import { View, Text } from "react-native";
+import { Provider } from 'react-redux';
+import { store } from './src/redux/store';
 
-function App() {
+// *** OTHER ***
+import ProductListScreen from './src/screens/ProductListScreen';
+
+export default function App() {
   return (
-    <View>
-      <Text>HI!</Text>
-    </View>
+    <Provider store={store}>
+      <ProductListScreen />
+    </Provider>
   );
 }
-
 registerRootComponent(App);
